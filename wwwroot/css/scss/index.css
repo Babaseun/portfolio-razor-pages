@@ -189,4 +189,17 @@ a {
   width: 100%;
   padding: 20px;
 }
+
+.siblings {
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-transition: 0.25s ease-out;
+  transition: 0.25s ease-out;
+  cursor: pointer;
+}
+
+.siblings:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
 /*# sourceMappingURL=index.css.map */

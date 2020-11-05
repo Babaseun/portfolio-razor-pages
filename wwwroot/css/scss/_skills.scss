@@ -27,3 +27,11 @@
   width: 100%;
   padding: 20px;
 }
+.siblings {
+  transform: translateZ(0);
+  transition: 0.25s ease-out;
+  cursor: pointer;
+}
+.siblings:hover {
+  transform: scale(1.05);
+}
