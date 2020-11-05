@@ -1,0 +1,116 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Person
+
+@{
+    ViewData["Name"] = Model.FirstName;
+}
+
+<div class="content">
+    <div class="main-section first-content">
+        <section class="main-section-content">
+            <div class="intro">
+                <div class="intro-message intro-text">
+                    <div class="first-intro">
+                        HI, I'M
+                        @Model.FirstName @Model.LastName
+
+                    </div>
+                    <div class="second-intro">
+                        @{
+                            @*var firstText = Model.BriefIntroduction.Substring(0, 49);
+                                var secondText = Model.BriefIntroduction.Substring(firstText.Length);*@
+
+                            <p>@Model.BriefIntroduction</p>
+                        }
+                        <p class="links">
+
+                            @foreach (var item in Model.userSocialMediaAccounts)
+                            {
+                                if (item.AccountType == "Twitter")
+                                {
+                                    {<a href=@item.AccountLink><i class="fab fa-twitter fa-2x"></i> </a>}
+
+                                }
+                                if (item.AccountType == "Github")
+                                {
+                                    {<a href=@item.AccountLink><i class="fab fa-github fa-2x"></i> </a>}
+
+                                }
+                                if (item.AccountType == "Facebook")
+                                {
+                                    {<a href=@item.AccountLink><i class="fab fa-facebook fa-2x"></i> </a>}
+
+                                }
+                                if (item.AccountType == "Linkedin")
+                                {
+                                    {<a href=@item.AccountLink><i class="fab fa-linkedin fa-2x"></i> </a>}
+
+                                }
+                            }
+
+
+                        </p>
+
+
+                    </div>
+                </div>
+                <div class="image">
+                    <img class="img-one" src="~/images/undraw_Content_re_33px.svg" alt="">
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <div class="second-content personal-summary">
+        <div class="summary-content">
+            <h2 class="h2-header">
+                Personal Summary
+            </h2>
+            <p class="summary-text">
+                @Model.PersonalSummary
+            </p>
+
+        </div>
+
+    </div>
+    <div class="skills-container">
+        <div class="skills">
+            <div class="parent">
+                <div class="children">
+                    <h2 class="skills-header">Technologies used</h2>
+                    <ul>
+                        @foreach (var item in Model.userSkills)
+                        {
+                            <li>@item.Skill</li>
+                        }
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <h2 style="text-align:center; padding:20px">Projects</h2>
+        <div class="projects">
+
+            @foreach (var item in Model.userProjects)
+            {
+                <div class="siblings">
+                    <div class="project">
+                        <h3> Project Name: @item.ProjectTitle</h3>
+                        <p>Project Summary : @item.ProjectSummary</p>
+                        <p>Project Link : <a href="@item.ProjectLink">Click To View </a></p>
+
+
+
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
